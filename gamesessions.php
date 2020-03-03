@@ -70,13 +70,13 @@ class gamesessions {
 
                 $extension = pathinfo ( $_FILES["file"]["name"], PATHINFO_EXTENSION );
 
-                $storedImage = "$postsPath/$uploadPrefix"."_image"."$extension";
+                $storedImage = "$postsPath/$uploadPrefix"."_image.$extension";
                 
                 $tmpName = $_FILES["file"]["tmp_name"];
 
                 if ( ! move_uploaded_file( $tmpName, $storedImage ) ) {
-
-                    $error = "Whoops! There was an error uploading your file.";
+print_r($_FILES);
+                   // $error = "Whoops! There was an error uploading your file.";
 
                 }
 
